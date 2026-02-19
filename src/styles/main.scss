@@ -1,0 +1,121 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "reset";
+
+@font-face {
+  font-family: "WorkSans";
+  src: url("/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.text-preset-1-bold {
+  @include text-preset-1-bold;
+}
+
+.text-preset-2-semibold {
+  @include text-preset-2-semibold;
+}
+
+.text-preset-3-regular {
+  @include text-preset-3-regular;
+}
+
+.purple-600 {
+  color: $purple-600;
+}
+
+.purple-950 {
+  color: $purple-950;
+}
+
+html {
+  font-size: 16px;
+  background-color: $purple-100;
+  background-image: url("/images/background-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+
+  @include tablet {
+    background-image: url("/images/background-pattern-desktop.svg");
+  }
+}
+
+body {
+  display: grid;
+  place-items: center; /*Aligne horizontalement et verticalement (uniquemnet pour display: grid) */
+  min-width: 320px; /* Sécurité pour très petit écran */
+
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  background: $white;
+  max-width: 327px;
+  border-radius: 20px;
+  text-align: left;
+  @include tablet {
+    max-width: 600px;
+  }
+
+  padding: $spacing-300;
+
+  @include tablet {
+    padding: $spacing-500;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  img {
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
+}
+
+.faq-container {
+  display: flex;
+  gap: $spacing-300;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li {
+  padding-block: $spacing-300;
+
+  &.open {
+    padding-block-end: 0;
+
+    .answer {
+      display: block;
+      padding-block: $spacing-300;
+    }
+  }
+
+  .answer {
+    display: none;
+  }
+}
+
+li + li {
+  border-top: 1px solid $purple-100;
+}
+
+header {
+  display: flex;
+  gap: $spacing-300;
+}
+
+li:last-child {
+  padding-block-end: 0;
+}

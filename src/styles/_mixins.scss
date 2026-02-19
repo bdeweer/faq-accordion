@@ -1,0 +1,37 @@
+@use "variables" as *;
+
+@mixin text-preset-1-bold {
+  font-family: "Work Sans", sans-serif;
+  font-size: 32px;
+  line-height: 66px;
+  letter-spacing: 0%;
+  font-weight: 700;
+}
+
+@mixin text-preset-2-semibold {
+  font-family: "Work Sans", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0%;
+  font-weight: 600;
+}
+
+@mixin text-preset-3-regular {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
