@@ -18,7 +18,6 @@ Users should be able to:
 
 ![](./Screenshot.png)
 
-
 ### Links
 
 - Solution URL: [https://bdeweer.github.io/faq-accordion/](https://bdeweer.github.io/faq-accordion/)
